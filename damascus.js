@@ -123,7 +123,7 @@ function drawFlowLines(time = 0) {
  ******************************************************/
 let time = 0;
 function animate() {
-    time += 0.006;           // Increase time each frame
+    time += 0.01;           // Increase time each frame
     drawFlowLines(time);    // Redraw lines with updated time
     requestAnimationFrame(animate);
 }
