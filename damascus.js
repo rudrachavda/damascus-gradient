@@ -77,9 +77,11 @@ function drawFlowLines(time = 0) {
     ctx.clearRect(0, 0, width, height);
 
     // ========== KEY PARAMETERS ========== 
-    const SCALE = 0.003;   // Noise frequency
-    const AMPLITUDE = 120;     // Wave height
-    const LINE_SPACING = 20;      // Vertical gap between lines
+    const SCALE = 0.0025; // Noise
+    const AMPLITUDE = 120; // height
+    const LINE_SPACING = 15; // Vertical gap between lines
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'white';      
     const WAVE_SPEED = 0.2;     // Speed factor for time
     // ===================================
 
@@ -91,11 +93,9 @@ function drawFlowLines(time = 0) {
     //    Tweak colorStop(0) and colorStop(1) to match your reference
     const gradient = ctx.createLinearGradient(0, 0, width, 0);
     // Example colors: left=light, right=dark
-    gradient.addColorStop(0, '#0e1526');
-
-    gradient.addColorStop(0.5, '#555354');
-
-    gradient.addColorStop(1, '#c4997e');
+    gradient.addColorStop(0, 'rgba(14,21,38,0.5)');   // 0.5 opacity
+    gradient.addColorStop(0.5, 'rgba(85,83,84,0.1)');
+    gradient.addColorStop(1, 'rgba(196,153,126,0.1)');
 
     // 2) Assign it once for all lines
     ctx.strokeStyle = gradient;
